@@ -1,0 +1,137 @@
+* , body {
+    margin: 0%;
+    padding: 0%;
+    
+}
+
+@font-face {
+    font-family: "Norse";
+    src: url(src/Norse-Bold.otf);
+}
+:root {
+    font-size: 10px;
+}
+#wrapper {
+    width: 100vw;
+    height: 100vh;
+    overflow-y: visible;
+
+}
+#aside {
+    width: 100%;
+    height: 100%;
+    min-height: 180px;
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#aside > div {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 20px;
+    color: aliceblue;
+    background-color: rgb(0, 0, 0 , 80%);
+    border-radius: 60px;
+    box-shadow: 1px 1px 50px 4px whitesmoke;
+    
+    img {
+        width: 120px;
+        height: 120px;
+    }
+    h1 {
+        font-family: Norse;
+        align-self: center;
+        font-size: 6rem;
+    }
+
+}
+
+
+form {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(1 , 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-areas:
+        "one"
+        "two"
+        "three";
+    > fieldset:first-child{
+        grid-area: one;
+        font-size:2rem;
+        justify-content: center;
+    }
+    >:nth-child(2){
+        grid-area: two;
+        font-size: 1.5rem;
+    }
+    >:last-child{
+        grid-area: three;
+    }
+
+}
+fieldset{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding : 20px 10% ;
+    font-size: 1rem;
+    border: none;
+    > div {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+#form-body > div {
+    display: flex;
+    flex-direction: column;
+    input {
+        width: 200px;
+    }
+}
+#submit {
+    --color: #8aa770;
+
+    button {
+        font-size: 2rem;
+        margin-bottom: 5px;
+        max-width: 180px;
+        border-radius: 5px;
+        border: 1px solid var(--color, darkgreen);
+        background-color: var(--color, darkgreen);
+    }
+    p {
+        font-size: 15px;
+    }
+    em {
+        color: var(--color ,  darkgreen);
+    }
+}
+.valid {
+    outline: 2px solid rgb(13, 211, 13);
+    border: none;
+}
+.invalid{
+    outline: 2px solid red;
+    border: none;
+}
+.error-msg-hide , .error-msg-show {
+    color: red;
+    margin: 4px 0px;
+}
+.error-msg-hide {
+    opacity: 0;
+}
+.error-msg-show {
+    opacity: 1;
+}
+.val-label {
+    color :rgb(13, 211, 13);
+}
+.inval-label {
+    color: red;
+}

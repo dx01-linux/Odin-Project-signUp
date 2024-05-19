@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        let link = document.createElement('link');
+        link.setAttribute("rel" , 'stylesheet');
+        if(window.screen.width <= 600){
+            link.setAttribute('href' , "phoneStyle.css");
+        }else {
+            link.setAttribute('href' , "style.css");
+        }
+        document.head.appendChild(link);
+    </script>
+    <link rel="stylesheet" href="">
+    <script src="app.js" defer> </script>
+    <title>Sign-Up-form</title>
+</head>
+<body>
+    <div id="wrapper">
+        <div id = 'aside'>
+            <div>
+                <img src="src/odin-lined.png" alt="logo" id = 'logoImg'>
+                <h1 id = 'logoFonts'> Odin </h1>
+            </div>
+        </div>
+        <div id ='main'>
+            <form action="#" method="post">
+                <fieldset>
+                    <div id="header">
+                        <p> 
+                            <b>
+                                This is not a real service! You know you need something like this in your life to help you realize
+                                your deepest dreams. Sing Up <em>now</em> to get started.
+                            </b>
+
+                        </p>
+                        <p>
+                            <b>
+                                You <em>know</em> you want to. Let's do it!
+                            </b>
+                        </p>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <div id = 'form-body'>
+                        <div>
+                            <label for="f-name">Frist-Name*</label>
+                            <input type="text" 
+                                   id = 'f-name' 
+                                   name = 'fristName' 
+                                   placeholder="Eve"
+                                   required
+                            >
+                            <small class="error-msg-hide">Required Field</small>
+                        </div>
+                        <div>
+                            <label for="l-name">Last-Name*</label>
+                            <input type="text" 
+                                    id="l-name" 
+                                    name = 'lastName' 
+                                    placeholder="Fogo"
+                                    required
+                            >
+                            <small class="error-msg-hide">Required Field</small>
+                        </div>
+                        <div>
+                            <label for="email">Email*</label>
+                            <input type="email" 
+                                   id="email" 
+                                   name="email" 
+                                   placeholder="evafogo@gmail.com" 
+                                   pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                                   required
+                            >
+                            <small class="error-msg-hide">Invalid Email</small>
+                        </div>
+                        <div>
+                            <label for="phone#">Phone Number*</label>
+                            <input type="text" 
+                                   id="phone" 
+                                   name = 'phoneNumber' 
+                                   placeholder="(111)-111-1111" 
+                                   pattern="\d{3}[\-]\d{3}[\-]\d{4}"
+                            >
+                            <small class="error-msg-hide">Invalid Phone Format</small>
+                        </div>
+                        <div>
+                            <label for="password">Password*</label>
+                            <input type="password" 
+                                   id="password" 
+                                   name="password" 
+                                   pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"
+                                   required
+                            >
+                            <small class="error-msg-hide">8 char long , one upper case 
+                            one digit , one special char
+                            </small>
+                        </div>
+                        <div>
+                            <label for="cPassword">Confirm Password*</label>
+                            <input type="password" 
+                                    id="cPassword"
+                                    required
+                            >
+                            <small class="error-msg-hide">Password don't match</small>
+                        </div>
+                    </div>
+                </fieldset>
+                
+                <fieldset>
+                    <div id = 'submit'>
+                        <button type="submit"> Create an Account </button>
+                        <p>Already have an account? <em>Log in</em></p>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
